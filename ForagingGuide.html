@@ -1,0 +1,115 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<!--Created by Morgan Lincicum
+	Some code referenced from Taroko Gorge by Nick Montfort
+	Inspired by Zach Whalen apparently going into the woods and randomly licking things -->
+<title>Page Title</title>
+
+<script language="JavaScript" type="text/javascript">
+	
+var plantAdj = 'poison,bush,green,sweet,ground,brown,purple,flowering,tall,white,speckled,black,common,false,red,river,swamp,water,forest,desert,bog,field,grass,bird,spice,yellow,weeping,hairy,bitter,sand,butterfly,meadow,wild,true,hare,brilliant,eastern,western,orange,golden,pale,pink,creeping,spring,summer,autumn,winter,spotted,brown,devil\'s,bristly,dragon,dye,dyer\'s,evergreen,deciduous,fairy,sword,domestic,night,day,morning,ground,healing,big,small,horse,jewel,star,cat,lace,moon,sun,southern,northern,silver,soft,thorned,honey,sugar,climbing,deadly,valley,mountain,stone,tropical,great,lesser,paper,ink,dwarf,silk,snake,prickly,spiny,sharp,worm,towering,noxious,paint,perfume'.split(',');
+var plantNoun = 'tree,bush,flower,hedge,vine,ivy,bloom,leaf,root,wood,berry,fern,shrub,bean,plant,cap,mushroom,weed,nut,fruit,foot,eye,moss,lichen,tongue,cane,tail,ear,onion,grass,stem'.split(',');
+var weirdAdjs = 'corpse,death,umbrella,leather,feather,paradise,wiggle,lone,baby\'s,horn,trumpet,arrow,magistrate\'s,milk,cow,hat,glove,merchant\'s,waga,maid,ento,lola,turn,gut,judgement,world\'s-end,void,kinnish,love,glowing,obedient,poor,shoe,road,traveler\'s,sneeze,cough,fever,itch,yarn,thousand,hundred,velvet,virtue,sin,proper,improper,tooth'.split(',');
+
+
+function random(max) {
+ return Math.floor(Math.random()*(max+1));
+}
+function choose(array) {
+ return array[random(array.length-1)];
+}
+
+function plantName() {
+	let temp = "";
+    let numAdj = random(2);
+    for(let i = 0; i < numAdj + 1; i++) {
+       	if(random(10) != 1) {
+        	temp+=choose(plantAdj) + " ";
+        }
+        else {
+        	temp+=choose(weirdAdjs) + " ";
+        }
+    }
+    //sometimes remove the space between the last adjective and the noun
+    if(random(2) > 0.5) {
+    	temp=temp.substring(0,temp.length-1);
+    }
+    temp+=choose(plantNoun);
+    return temp;
+}
+
+function warning(plantName) {
+	var start = ['Whatever you do, don\'t','DO NOT','Remember to never','You are advised not to','It would be against your best interest to','Avoid'];
+    var verb = 'eat,touch,pick,sniff,lick,come into contact with,smoke,boil,cook,rub'.split(',');
+    var end = 'at night,directly,alone,without protection,blindly,when animals are near'.split(',');
+	var reason = 'it is extremely poisonous,you WILL die,it has sharp thorns,it can cause vomitting,its smell is noxious,it attracts predators'.split(',');    
+    let temp = "";
+    
+    temp += choose(start) + " ";
+    if (temp =="Avoid ") {
+    	temp += choose(verb) + "ing ";
+    }
+    else {
+    	temp += choose(verb) + " ";
+    }
+    if(random(5) == 1) {
+    	temp += "or " + choose(verb) + " ";
+    }
+    if(random(5) == 1) {
+    	temp += choose(end) + " ";
+    }
+    if(random(5) == 1) {
+    	if(random(1) == 1) {
+        	temp = temp.substring(0, temp.length - 1);
+            temp += ", as " + choose(reason);
+        }
+        else {
+        	temp += "- " + choose(reason);
+        }
+    }
+    if(temp.charAt(temp.length - 1) == " ") {
+    	temp = temp.substring(0, temp.length - 1);
+    }
+    temp += ".";
+    return temp;
+}
+
+function addText(text, color) {
+    text=text.substring(0,1).toUpperCase()+text.substring(1,text.length);
+    var main = document.getElementById('main');
+	var last = document.createElement('div');
+    last.style.color = color;
+	last.appendChild(document.createTextNode(text));
+	main.appendChild(last);
+}
+
+function create() {
+	let text = "";
+	for(let i = 0; i < 30; i++) {
+    	if(random(3) == 1) {
+        	let name = plantName();
+            text = name + "--" + warning(name);
+            addText(text, "red");
+        }
+        else {
+        	text = plantName();
+            addText(text, "green");
+        }
+        
+    }
+}
+</script>
+</head>
+
+<body onload="create()">
+
+
+<h1>Foraging Guide</h1>
+
+<div id="main"></div>
+
+</body>
+</html>
