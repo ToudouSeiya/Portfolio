@@ -1,0 +1,11 @@
+html,
+body {
+	background-color:darkgreen;
+	margin: 0;
+	padding: 0;
+	color:white;
+}
+
+div {
+	background-color:lightgreen;
+}
