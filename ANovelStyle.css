@@ -1,0 +1,81 @@
+/* CSS code from examples at https://pagedjs.org/documentation */
+
+		body {
+			counter-reset: countChapter;
+		}
+
+		@page {
+			size: A5;
+		}
+
+		@page:left {
+		  margin-left: 25mm;
+		  margin-right: 18mm;
+		  @bottom-left {
+		  	content: counter(page);
+		  }
+			@top-right {
+				font-style:italics;
+				font-variant: all-small-caps;
+				content: "Morgan Lincicum";
+			}
+		}
+
+		@page:right {
+		  margin-left: 18mm;
+		  margin-right: 25mm;
+
+		  @bottom-right {
+		  	content: counter(page);
+		  }
+			@top-left {
+				font-style:italics;
+				font-variant: all-small-caps;
+				content: "A Novel, or Something";
+			}
+		}
+
+		@page:first {
+			@top-right {
+		  	content: '';
+		  }
+			@top-left {
+				content:"";
+			}
+		}
+
+		p {
+			text-align:justify;
+		}
+
+
+		h2 {
+			break-before: right;
+			counter-increment: countChapter;
+		}
+		h2::before {
+			content: "Chapter " counter(countChapter);
+			display: block;
+			font-size: 200%;
+			font-variant: all-caps;
+			margin-top: 30mm;
+		}
+
+		h1 {
+			/*break-after: page;*/
+			margin-top: 30mm;
+			text-align: center;
+			font-size: 16mm;
+		}
+
+		subtitle {
+			text-align: center;
+			break-after: page;
+			font-size: 10mm;
+			display: block;
+		}
+
+/* 		added by me */
+		h3 {
+			text-align: center;
+		}
