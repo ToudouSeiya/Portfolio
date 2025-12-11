@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<script src="https://cdn.jsdelivr.net/npm/p5@1.11.7/lib/p5.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/p5@1.11.7/lib/addons/p5.sound.min.js"></script>
+	<script src="ecosystemz.js"></script>
+	<link rel="stylesheet" type="text/css" href="ecosystemzStyle.css">
+</head>
+
+<body>  
+
+	<div id="startMenu">
+	<h1>Simulation Options</h1>
+		
+	<label for="water">Amount of Water in Land</label><br>
+	<span id="waterP" style="color:blue;"></span> <br>
+	<input type="range" id="water" min="0" max="200" value="100">
+
+	<br><br><label for="preyNum">Number of Starting Prey Species</label>
+	<br><span id="preyO" style="color:blue;"></span>
+	<br><input type="range" id="preyNum" min="1" max="4" value="1"><br>
+		<div class="prey">
+			<div class="preySpecies" id="preySpecies1">
+				<h3>Prey Species 1</h3>
+				<label for="color1">Color</label><input type="color" id="color1">
+				<label for="speed1">Speed</label><input type="range" id="speed1" min="1" max="9" value="4">
+				<label for="size1">Size</label><input type="range" id="size1" min="1" max="9" value="4">
+				<br><label for="swim1">Swimming</label><input type=checkbox id="swim1">
+				<label for="cold1">Cold-blooded</label><input type=checkbox id="cold1">
+				<label for="sleep1">Hibernates</label><input type=checkbox id="sleep1">
+			</div>
+			<div class="preySpecies" id="preySpecies2">
+				<h3>Prey Species 2</h3>
+				<label for="color2">Color</label><input type="color" id="color2">
+				<label for="speed2">Speed</label><input type="range" id="speed2" min="1" max="9" value="4">
+				<label for="size2">Size</label><input type="range" id="size2" min="1" max="9" value="4">
+				<br><label for="swim2">Swimming</label><input type=checkbox id="swim2">
+				<label for="cold2">Cold-blooded</label><input type=checkbox id="cold2">
+				<label for="sleep2">Hibernates</label><input type=checkbox id="sleep2">
+			</div>
+			<div class="preySpecies" id="preySpecies3">
+				<h3>Prey Species 3</h3>
+				<label for="color3">Color</label><input type="color" id="color3">
+				<label for="speed3">Speed</label><input type="range" id="speed3" min="1" max="9" value="4">
+				<label for="size3">Size</label><input type="range" id="size3" min="1" max="9" value="4">
+				<br><label for="swim3">Swimming</label><input type=checkbox id="swim3">
+				<label for="cold3">Cold-blooded</label><input type=checkbox id="cold3">
+				<label for="sleep3">Hibernates</label><input type=checkbox id="sleep3">
+			</div>
+			<div class="preySpecies" id="preySpecies4">
+				<h3>Prey Species 4</h3>
+				<label for="color4">Color</label><input type="color" id="color4">
+				<label for="speed4">Speed</label><input type="range" id="speed4" min="1" max="9" value="4">
+				<label for="size4">Size</label><input type="range" id="size4" min="1" max="9" value="4">
+				<br><label for="swim4">Swimming</label><input type=checkbox id="swim4">
+				<label for="cold4">Cold-blooded</label><input type=checkbox id="cold4">
+				<label for="sleep4">Hibernates</label><input type=checkbox id="sleep4">
+			</div>
+		</div>
+	<br><br><label for="predNum">Number of Starting Predator Species</label>
+	<br><span id="predO" style="color:blue;"></span>
+	<br><input type="range" id="predNum" min="1" max="4" value="1"><br>
+		<div class="predators">
+			<div class="predatorSpecies" id="predatorSpecies1">
+				<h3>Predator Species 1</h3>
+				<label for="colorP1">Color</label><input type="color" id="colorP1">
+				<label for="speedP1">Speed</label><input type="range" id="speedP1" min="1" max="9" value="4">
+				<label for="sizeP1">Size</label><input type="range" id="sizeP1" min="1" max="9" value="4">
+				<br><label for="swimP1">Swimming</label><input type=checkbox id="swimP1">
+				<label for="coldP1">Cold-blooded</label><input type=checkbox id="coldP1">
+				<label for="sleepP1">Hibernates</label><input type=checkbox id="sleepP1">
+			</div>
+			<div class="predatorSpecies" id="predatorSpecies2">
+				<h3>Predator Species 2</h3>
+				<label for="colorP2">Color</label><input type="color" id="colorP2">
+				<label for="speedP2">Speed</label><input type="range" id="speedP2" min="1" max="9" value="4">
+				<label for="sizeP2">Size</label><input type="range" id="sizeP2" min="1" max="9" value="4">
+				<br><label for="swimP2">Swimming</label><input type=checkbox id="swimP2">
+				<label for="coldP2">Cold-blooded</label><input type=checkbox id="coldP2">
+				<label for="sleepP2">Hibernates</label><input type=checkbox id="sleepP2">
+			</div>
+			<div class="predatorSpecies" id="predatorSpecies3">
+				<h3>Predator Species 3</h3>
+				<label for="colorP3">Color</label><input type="color" id="colorP3">
+				<label for="speedP3">Speed</label><input type="range" id="speedP3" min="1" max="9" value="4">
+				<label for="sizeP3">Size</label><input type="range" id="sizeP3" min="1" max="9" value="4">
+				<br><label for="swimP3">Swimming</label><input type=checkbox id="swimP3">
+				<label for="coldP3">Cold-blooded</label><input type=checkbox id="coldP3">
+				<label for="sleepP3">Hibernates</label><input type=checkbox id="sleepP3">
+			</div>
+			<div class="predatorSpecies" id="predatorSpecies4">
+				<h3>Predator Species 4</h3>
+				<label for="colorP4">Color</label><input type="color" id="colorP4">
+				<label for="speedP4">Speed</label><input type="range" id="speedP4" min="1" max="9" value="4">
+				<label for="sizeP4">Size</label><input type="range" id="sizeP4" min="1" max="9" value="4">
+				<br><label for="swimP4">Swimming</label><input type=checkbox id="swimP4">
+				<label for="coldP4">Cold-blooded</label><input type=checkbox id="coldP4">
+				<label for="sleepP4">Hibernates</label><input type=checkbox id="sleepP4">
+			</div>
+		</div>
+		
+	<button type="button" onclick="start()">Start</button>
+
+	<script src="startMenu.js"></script>
+	</div>
+	<div id="sideMenu" hidden>
+		<h2 id="running">Simulation Running</h2>
+		<button onclick="pause()" id="pauseButton"><img src="pause.png" id="pause"></button>
+		<br>
+		<label for="time">Play Speed</label><br>
+		<input type="range" id="time" min="1" max="200" value="100">
+		<label for="season"><h3 id="season">SPRING</h3></label>
+		<label for="temperature"><h4 id="temperature">Temperature: 60 degrees</h4></label><br>
+		<label for="prey"><h4 id="numPrey">Prey Alive: 0</h4></label>
+		<h4 style="color:red;" id="preyDisplay">XXXXXXXXXXXXXX</h4>
+		<label for="predator"><h4 id="numPred">Predators Alive: 0</h4></label>
+		<h4 style="color:red;" id="predDisplay">XXXXXXXXXXXXXX</h4>
+		
+	</div>
+	
+</body>
+
+</html>
