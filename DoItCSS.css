@@ -1,0 +1,53 @@
+.main {
+	font-size: 24px;
+	width: 750px;
+	height: 50%;
+	margin: 100px auto;
+}
+
+#solid {
+	opacity: 1;
+}
+
+#half{
+	opacity: 0.5;
+	position: absolute;
+	top: 130px;
+	font-style: italic;
+/* 	top: 35px; */
+/* 	left: 5px; */
+}
+
+#third{
+/* 	opacity: 0; */
+	opacity: 0.33;
+	position: absolute;
+	top: 185px;
+	font-style: italic;
+}
+
+#clickMe:hover{
+	color: red;
+}
+
+#left {
+	font-size: 24px;
+	opacity: 0.3;
+	width: 25%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	overflow: hidden;
+}
+
+#right {
+	font-size: 24px;
+	opacity: 0.3;
+	width: 25%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	right: 0;
+	overflow: hidden;
+}
