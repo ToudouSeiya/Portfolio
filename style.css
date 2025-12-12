@@ -1,0 +1,73 @@
+/*Disclaimer: This code was modified from the following tutorial: https://www.w3schools.com/howto/howto_js_full_page_tabs.asp */
+/* Set height of body and the document to 100% to enable "full page tabs" */
+body, html {
+  height: 100%;
+  margin: 0;
+  font-family: Arial;
+}
+
+/* Style tab links */
+.tablink {
+  background-color: #555;
+  color: white;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  font-size: 17px;
+  width: 16.6666%;
+}
+
+.tablink:hover {
+  background-color: #777;
+}
+
+/* Style the tab content (and add height:100% for full page content) */
+.tabcontent {
+  color: white;
+  display: none;
+  padding: 75px 20px;
+  height: 100%;
+}
+
+.content {
+	background-color:white;
+	color:black;
+	width:50%;
+	height:fit-content;
+	margin: auto;
+	padding: 50px 20px;
+	text-align:center;
+	border-radius:4px;
+}
+
+img {
+	max-height:400px;
+	max-width:700px;
+	display:block;
+	margin:auto;
+}
+
+p {
+	margin:auto;
+	max-width:700px;
+}
+
+h3 {
+	padding:0;
+	margin:0;
+}
+
+.playButton {
+	background-color:black;
+	color:white;
+	margin: 30px auto;
+}
+
+#home {background-color: navy; font-family:Georgia;}
+#ecosystemz {background-color: purple; font-family:monospace;}
+#city {background-color: orange; font-family:Tahoma;}
+#aNovel {background-color: blue; font-family:'Times New Roman';}
+#doIt {background-color: red; font-family:'Trebuchet MS';}
+#foraging {background-color: green; font-family:'Verdana';}
