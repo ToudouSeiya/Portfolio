@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- 	https://www.w3schools.com/howto/howto_js_full_page_tabs.asp -->
+	<meta charset="utf-8" />
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>  
+	<nav>
+		<button class="tablink" onclick="openPage('home', this, 'navy')" style="font-family:Georgia;" id="defaultOpen">Home</button>
+		<button class="tablink" onclick="openPage('ecosystemz', this, 'purple')" style="font-family:monospace;">ecosystemz</button>
+		<button class="tablink" onclick="openPage('city', this, 'orange')" style="font-family:Tahoma;">City In The Cliffs</button>
+		<button class="tablink" onclick="openPage('aNovel', this, 'blue')" style="font-family:'Times New Roman';">A Novel, or Something</button>
+		<button class="tablink" onclick="openPage('doIt', this, 'red')" style="font-family:'Trebuchet MS';">DO IT</button>
+		<button class="tablink" onclick="openPage('foraging', this, 'green')" style="font-family:'Verdana';">Foraging Guide</button>
+	</nav>
+
+	<div class="tabcontent" id="home">
+		<img src="https://images.pexels.com/photos/2860804/pexels-photo-2860804.jpeg" style="max-width:90%; width:90%;height:100px;">
+		<div class="content">
+			<h2 style="font-size:70px;">Hello!</h2>
+			<p>My name is Morgan Lincicum and this is my portfolio for some of the work that I created in my Creative Coding DGST302 class. Click on the tabs above to explore them!</p>
+			<br><p><i>Credit to w3schools for the template for the tabs: https://www.w3schools.com/howto/howto_js_full_page_tabs.asp</i></p>
+		</div>
+		<img src="https://images.pexels.com/photos/2860804/pexels-photo-2860804.jpeg" style="max-width:90%; width:90%;height:100px;">
+	</div>
+
+	<div class="tabcontent" id="ecosystemz">
+		<img src="https://docs.google.com/drawings/d/e/2PACX-1vSGTkU2dSuUe51F-aEyCCtvyoefcFFwLBrH9eIPcK0AwQNTayRAQaIVYKpLUwHsWvOPL_GhkhnuC-WF/pub?w=960&amp;h=720">
+		<div class="content">
+			<h3 style="font-size:70px;">ecosystemz</h3>		
+			<p>Customize different species and watch them grow and interact with their environment in this pixel-based ecosystem simulator. Enjoy the abstract sight as seasons change,
+			populations wax and wane, and genes mix and mutate.</p>
+			<a href="ecosystemz.html"><button  class="playButton">Play Here</button></a>
+		</div>
+	</div>
+
+	<div class="tabcontent" id="city">
+	<img src="https://docs.google.com/drawings/d/e/2PACX-1vRFdkUkix9UURVjuH7PMM-uyU1JNoSIiYIjkR5UUQnIWEgGAtqoXl4GUzWEuSclRThhQIngTN3eDmwd/pub?w=960&amp;h=720">
+		<div class="content">
+			<h3 style="font-size:70px;">City in the Cliffs</h3>		
+			<p>Explore a series of generated landscapes taking place in a "city in the cliffs", each one completely unique. Press the right arrow key to speed up your forward movement.</p>
+			<a href="CityInTheCliffsIndex.html"><button  class="playButton">Play Here</button></a>
+		</div>
+	</div>
+
+	<div class="tabcontent" id="aNovel">
+		<img src="https://docs.google.com/drawings/d/e/2PACX-1vQZVtVBbVt1A4XMPZ8v0d07nE1tBxt8RW7LbEYiGfSJN6Gfq3A9skWDoiGGTFibvx4ZSDSWeJuopv6H/pub?w=960&amp;h=720">
+		<div class="content">
+			<h3 style="font-size:70px;">A Novel, or Something</h3>		
+			<p>This program generates a 50,000+ word novel, each one starring a different wacky character and their equally wacky pet. Although there are only about 10 unique chapters, each generated version is completely unique.</p>
+			<a href="ANovel.html"><button  class="playButton">Generate Here</button></a>
+			<p><i>This can take a long time to load. If it's too slow for you, you can also look at this pre-generated pdf:</i> <a href="https://drive.google.com/file/d/1zc5VJl6yqPV7_lue9OI9rqDEj-GJjcbA/view?usp=sharing">Read</a>
+			<i><br>It will tell you you don't have access, but you do. Click "open the document directly."</i></p>
+		</div>
+	</div>
+
+	<div class="tabcontent" id="doIt">
+		<img src="https://docs.google.com/drawings/d/e/2PACX-1vT3ooRvs2DqSFGv71CXJJwLfMGE6iKm2fvbnzXSV_BZhO38T8Z4tR6jQ3dLmPXLIZWaAiOtVGOnlEKC/pub?w=960&amp;h=720">
+		<div class="content">
+			<h3 style="font-size:70px;">DO IT</h3>		
+			<p>This concrete poem uses HTML to creatively display the words from "The Cult of Done Manifesto" by Bre Pettis and Kio Stark. Click on the last "DO IT" for a surprise!</p>
+			<a href="DoIt.html"><button  class="playButton">Read Here</button></a>
+		</div>
+	</div>
+
+	<div class="tabcontent" id="foraging">
+		<img src="https://docs.google.com/drawings/d/e/2PACX-1vQjMxWZ1u0arJqxJbK5NpGk0P0LeLBbTsZG3PRaYWRgtmeAc9hP-Ddd6AnqzIxMQGEkXAeit6u86X_d/pub?w=960&amp;h=720">
+		<div class="content">
+			<h3 style="font-size:70px;">Foraging Guide</h3>		
+			<p>Tired of the same old plant names? Want some fictional plants for a fictional world? This program generates a list of randomly named plants based on real plant names and tells you which ones should be avoided.</p>
+			<a href="ForagingGuide.html"><button  class="playButton">Generate Here</button></a>
+			<p><i>Looking at you, Zach Whalen. Don't lick every plant you come across.</i></p>
+		</div>
+	</div>
+
+		<script src="tabs.js"></script>
+</body>
+
+</html>
