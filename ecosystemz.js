@@ -93,13 +93,13 @@ function pause(){
 	header = document.getElementById("running");
 	paused = !paused;
 	if (paused){
-		pauseButton.src = "unpause.png";
+		pauseButton.src = "https://deckard.openprocessing.org/user543733/visual2816596/h1a01cd4f93393b9e9a9750c0a39b7c4e/unpause.png?imageModal=0.2467486469418324";
 		header.innerHTML="Simulation Paused";
 		lastSpeed = speed;
 		speed = 0;
 	}
 	else {
-		pauseButton.src = "pause.png";
+		pauseButton.src = "https://deckard.openprocessing.org/user543733/visual2816596/h1a01cd4f93393b9e9a9750c0a39b7c4e/pause.png?imageModal=0.11365439024931057";
 		header.innerHTML="Simulation Running";
 		speed = lastSpeed;
 	}
